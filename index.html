@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEMI | LISANS DOGRULAMA</title>
+    <style>
+        body { background-color: #0a0a0a; color: #00ff41; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .container { border: 2px solid #00ff41; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px #00ff41; text-align: center; width: 350px; }
+        h1 { font-size: 24px; margin-bottom: 20px; text-shadow: 0 0 10px #00ff41; }
+        input { background: #000; border: 1px solid #00ff41; color: #00ff41; padding: 10px; width: 80%; text-align: center; margin-bottom: 20px; outline: none; }
+        button { background: #00ff41; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #000; color: #00ff41; border: 1px solid #00ff41; }
+        .hidden { display: none; }
+        .version-card { background: #111; border: 1px inset #00ff41; margin: 10px 0; padding: 10px; text-decoration: none; color: white; display: block; border-radius: 5px; }
+        .version-card:hover { background: #222; }
+    </style>
+</head>
+<body>
+
+<div id="login-box" class="container">
+    <h1>GEMI OS TERMINAL</h1>
+    <p>ERISIM ANAHTARINI GIRIN</p>
+    <input type="password" id="passkey" placeholder="****">
+    <br>
+    <button onclick="checkAccess()">SISTEME GIRIS</button>
+</div>
+
+<div id="content" class="container hidden">
+    <h1>ERISIM ONAYLANDI</h1>
+    <p>Aktif Lisans: <span style="color:white;">Aralik 2025</span></p>
+    <hr style="border-color:#00ff41">
+    
+    <a href="LINK_V1.2" class="version-card">GEMI V1.2 - STANDART</a>
+    <a href="LINK_V1.3" class="version-card">GEMI V1.3 - STABIL</a>
+    <a href="LINK_V1.4" class="version-card">GEMI V1.4 - FULL PERFORMANCE</a>
+    
+    <p style="font-size: 10px; color: #888; margin-top: 20px;">Gemi V1.4 Key: "Skill Issue Olmasın"</p>
+</div>
+
+<script>
+function checkAccess() {
+    var p = document.getElementById("passkey").value;
+    // ŞIFREYI BURADAN DEGISTIRIN
+    if (p === "gemiv14") { 
+        document.getElementById("login-box").classList.add("hidden");
+        document.getElementById("content").classList.remove("hidden");
+    } else {
+        alert("GECERSIZ LISANS! ODEME YAPTIYSANIZ ADMINE ULASIN.");
+    }
+}
+</script>
+
+</body>
+</html>
